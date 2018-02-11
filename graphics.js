@@ -16,22 +16,20 @@ const graphicsModule = (function () {
 	}
 
 	/**
-	* This function initializes the snake array. The snake has a length of four at the
+	* This function initializes the snake array. The snake has a length of five at the
 	* beginning of the game.
 	*/
 	const initSnake = function () {
-		const snakeLength = 4;
+		const snakeLength = 5;
 		snake = [];
 
-		// push 5 elements inside array (squares)
-		for (let i = snakeLength; i >= 0; i--) {
-			snake.push({x:i, y:0});
+		for (let i = snakeLength; i > 0; i--) {
+			snake.push({x:i, y:1});
 		}
 	}
 
 	/**
-	* This function draws a single segment of the snake body. Location of segment is
-	* indicated by the parameters.
+	* This function draws the snake body using the objects in the snake array.
 	*/
 	const drawSnake = function () {
 		for (let i = 0; i < snake.length; i++) {
@@ -72,20 +70,20 @@ const graphicsModule = (function () {
 	}
 
 	/**
-	* This function draws a piece of food at the location indicated by the function
-	* parameters.
+	* This function draws a piece of food at the location indicated by the food object's
+	* x and y properties.
 	*/
-	const drawFood = function (x, y) {
+	const drawFood = function () {
 		ctx.fillStyle = "#ffcc00";
-		ctx.fillRect(x * snakeSize, y * snakeSize, snakeSize, snakeSize);
+		ctx.fillRect(food.x * snakeSize, food.y * snakeSize, snakeSize, snakeSize);
 		ctx.fillStyle = "#ff9933";
-		ctx.fillRect(x * snakeSize + 1, y * snakeSize + 1, snakeSize - 2, snakeSize - 2);
+		ctx.fillRect(food.x * snakeSize + 1, food.y * snakeSize + 1, snakeSize - 2, snakeSize - 2);
 	}
 
 	/**
 	* This function updates the score on the GUI.
 	*/
-	const updateScore = function (x, y) {
+	const updateScore = function () {
 		const scoreText = "SCORE: " + score;
 		ctx.font = "1em Optima";
 		ctx.fillStyle = "black";
@@ -157,7 +155,7 @@ const graphicsModule = (function () {
 	    snake.unshift(tail);
 
 		drawSnake();
-		drawFood(food.x, food.y);
+		drawFood();
 		updateScore();
 	}
 
@@ -168,7 +166,7 @@ const graphicsModule = (function () {
 		drawSnake();
 
 		createFood();
-		drawFood(food.x, food.y);
+		drawFood();
 
 		score = 0;
 		updateScore();
