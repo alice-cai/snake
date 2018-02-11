@@ -1,10 +1,10 @@
-(function (window, document, drawModule) {
-	drawModule.init(); // init GUI
+(function (window, document, graphicsModule) {
+	graphicsModule.init(); // init GUI
 
 	// when the start button is clicked, the game begins
 	const startButton = document.getElementById("startButton");
 	startButton.addEventListener("click", function () {
-		drawModule.startGame();
+		graphicsModule.startGame();
 	});
 
 	// change direction of snake according to the player's key presses
@@ -25,4 +25,4 @@
 			direction = "down";
 		}
 	}
-})(window, document, drawModule);
+})(window, document, graphicsModule);

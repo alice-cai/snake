@@ -3,7 +3,7 @@
 * pattern for code structure.
 */
 
-const drawModule = (function () {
+const graphicsModule = (function () {
 	/**
 	* This function draws the background and border of the canvas.
 	*/
