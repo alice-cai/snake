@@ -175,7 +175,7 @@ const graphicsModule = (function () {
 	const startGame = function () {
 		startButton.setAttribute("disabled", true);
 		direction = "down";
-		gameLoop = setInterval(updateGUI, 80);
+		gameLoop = setInterval(updateGUI, 30);
 	}
 
 	return {
