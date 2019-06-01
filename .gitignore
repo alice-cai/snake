@@ -1,5 +1,9 @@
+# Created by https://www.gitignore.io/api/sass,macos
+# Edit at https://www.gitignore.io/?templates=sass,macos
+
 ### macOS ###
-*.DS_Store
+# General
+.DS_Store
 .AppleDouble
 .LSOverride
 
@@ -24,3 +28,11 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+### Sass ###
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+# End of https://www.gitignore.io/api/sass,macos

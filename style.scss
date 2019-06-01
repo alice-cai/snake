@@ -1,0 +1,71 @@
+$accentColour: #66a3ff;
+$canvasBorderColour: #C0C0C0;
+$buttonHoverColour: #ff9933;
+$buttonDisabledColour: #909090;
+
+body {
+	margin: 0;
+	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+#titleSection {
+	background: $accentColour;
+	min-width: 100vw;
+	height: 8em;
+
+	align-self: flex-start;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	#title {
+		font-family: "Optima";
+		font-size: 5.8em;
+		color: white;
+	}
+}
+
+#gameSection {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin-top: 6em;
+	margin-bottom: 5em;
+
+	#snakeCanvas {
+		border: 1px solid $canvasBorderColour;
+		margin-bottom: 1.5em;
+	}
+
+	#startButton {
+		font-family: "Optima";
+		font-style: bold;
+		font-size: 1.3em;
+		letter-spacing: 1px;
+		font-weight: 600;
+		text-align: center;
+
+		background-color: $accentColour;
+		color: white;
+		border-color: white;
+		border-radius: 0.25em;
+		height: 2.5em;
+		width: 9em;
+
+		&:hover {
+			background-color: $buttonHoverColour;
+		}
+
+		&:disabled {
+			background-color: $buttonDisabledColour;
+		}
+	}
+}
